@@ -1,4 +1,4 @@
-function! Fetching(...)
+function! g:Fetching(...)
 
     let firstArg=a:0
     let secondArg=a:1
@@ -6,8 +6,10 @@ function! Fetching(...)
     let fourthArg=a:3
     let fifthArg=a:4
 
-    command! -nargs=* TatoebaKarini call Fetching(<f-args>) 
-    execute ":terminal python tatoeba-karini.py" a:1 a:2 a:3 a:4 
+    let ttbkPath=expand('%')
+    let ttbkScript="tatoeba-karini.vim"
+
+    execute ":terminal python" ttbkPath ttbkScript a:1 a:2 a:3 a:4 
     stopinsert
 
     "[ ] clean the status
@@ -15,5 +17,4 @@ function! Fetching(...)
     "[ ] Create 
 
 endfunction
-
 
