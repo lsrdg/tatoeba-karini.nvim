@@ -7,7 +7,7 @@ function! g:Fetching(...)
     let fifthArg=a:4
 
     let ttbkPath=expand('%')
-    let ttbkScript="tatoeba-karini.vim"
+    let ttbkScript="tatoeba-karini.py"
 
     execute ":terminal python" ttbkPath ttbkScript a:1 a:2 a:3 a:4 
     stopinsert
@@ -18,3 +18,4 @@ function! g:Fetching(...)
 
 endfunction
 
+command! -nargs=* TatoebaKarini call tatoeba-karini#Fetching(<f-args>) 
