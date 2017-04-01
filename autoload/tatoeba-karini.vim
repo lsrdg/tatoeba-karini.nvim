@@ -3,5 +3,4 @@ if !exists('g:tatoeba_karini_load')
 endif
 
 if g:tatoeba_karini_load
-    command! -nargs=* TatoebaKarini call tatoeba-karini#Fetching(<f-args>) 
 endif
